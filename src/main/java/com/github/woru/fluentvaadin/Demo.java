@@ -1,9 +1,19 @@
-fluent-vaadin
-=============
+package com.github.woru.fluentvaadin;
 
-Set of fluent builders for vaadin layouts and components
-```java
- HorizontalLayout horizontalLayout = horizontalLayout()
+import com.vaadin.server.ExternalResource;
+import com.vaadin.ui.Alignment;
+import com.vaadin.ui.HorizontalLayout;
+
+import static com.github.woru.fluentvaadin.ButtonBuilder.button;
+import static com.github.woru.fluentvaadin.HorizontalLayoutBuilder.horizontalLayout;
+import static com.github.woru.fluentvaadin.LinkBuilder.link;
+import static com.github.woru.fluentvaadin.MarginInfoBuilder.margin;
+import static com.github.woru.fluentvaadin.TextFieldBuilder.textField;
+import static com.github.woru.fluentvaadin.VerticalLayoutBuilder.verticalLayout;
+
+public class Demo {
+    public static void main(String[] args) {
+        HorizontalLayout horizontalLayout = horizontalLayout()
                 .with(margin().left().right())
                 .spacingEnabled()
                 .sizeFull()
@@ -19,5 +29,5 @@ Set of fluent builders for vaadin layouts and components
                         .value(""))
                 .addComponent(textField("Disabled input").disabled())
                 .build();
-```
-
+    }
+}
