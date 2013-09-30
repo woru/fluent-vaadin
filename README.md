@@ -99,4 +99,4 @@ Here's exacty the same layout build with the fluent api:
                 .build();
 ```
 
-<a href="http://woru.github.io/fluent-vaadin/apidocs">javadoc</a>
+<a href="http://woru.github.io/fluent-vaadin/apidocs/">javadoc</a>
