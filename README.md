@@ -98,3 +98,5 @@ Here's exacty the same layout build with the fluent api:
                 .addComponent(table)
                 .build();
 ```
+
+<a href="http://woru.github.io/fluent-vaadin/apidocs">javadoc</a>
