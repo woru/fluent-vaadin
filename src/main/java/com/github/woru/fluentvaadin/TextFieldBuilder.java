@@ -2,6 +2,9 @@ package com.github.woru.fluentvaadin;
 
 import com.vaadin.ui.TextField;
 
+/**
+ * Builder for {@link com.vaadin.ui.TextField}
+ */
 public class TextFieldBuilder extends AbstractFieldBuilder<TextFieldBuilder, TextField, String> {
 
     public TextFieldBuilder() {

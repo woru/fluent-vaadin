@@ -5,6 +5,9 @@ import com.vaadin.ui.AbstractOrderedLayout;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Component;
 
+/**
+ * Base class for all Layouts derived from AbstractOrderedLayout.
+ */
 public class AbstractOrderedLayoutBuilder<S extends AbstractOrderedLayoutBuilder, C extends AbstractOrderedLayout> extends ComponentBuilder<S, C> {
 
     protected AbstractOrderedLayoutBuilder(Class<S> selfType, C component) {
@@ -61,6 +64,13 @@ public class AbstractOrderedLayoutBuilder<S extends AbstractOrderedLayoutBuilder
         return myself;
     }
 
+    /**
+     * Specifies margins.
+     * <pre>   {@code horizontalLayout()
+        .with(margin().left().right())
+        .build();
+    }</pre>
+     */
     public S with(MarginInfoBuilder marginInfoBuilder) {
         return margin(marginInfoBuilder.build());
     }

@@ -2,6 +2,9 @@ package com.github.woru.fluentvaadin;
 
 import com.vaadin.shared.ui.MarginInfo;
 
+/**
+ * Builder for {@link com.vaadin.shared.ui.MarginInfo}
+ */
 public class MarginInfoBuilder {
     private boolean top;
     private boolean right;

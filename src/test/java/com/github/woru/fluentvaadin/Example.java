@@ -11,7 +11,7 @@ import static com.github.woru.fluentvaadin.MarginInfoBuilder.margin;
 import static com.github.woru.fluentvaadin.TextFieldBuilder.textField;
 import static com.github.woru.fluentvaadin.VerticalLayoutBuilder.verticalLayout;
 
-public class Demo {
+public class Example {
     public static void main(String[] args) {
         HorizontalLayout horizontalLayout = horizontalLayout()
                 .with(margin().left().right())

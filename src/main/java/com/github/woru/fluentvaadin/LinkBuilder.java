@@ -3,7 +3,10 @@ package com.github.woru.fluentvaadin;
 import com.vaadin.server.Resource;
 import com.vaadin.ui.Link;
 
-public class LinkBuilder  extends ComponentBuilder<LinkBuilder, Link> {
+/**
+ * Builder for {@link com.vaadin.ui.Link}
+ */
+public class LinkBuilder extends ComponentBuilder<LinkBuilder, Link> {
 
     public LinkBuilder() {
         super(LinkBuilder.class, new Link());

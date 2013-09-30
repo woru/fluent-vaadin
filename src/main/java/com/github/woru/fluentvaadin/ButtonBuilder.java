@@ -2,6 +2,9 @@ package com.github.woru.fluentvaadin;
 
 import com.vaadin.ui.Button;
 
+/**
+ * Builder for {@link com.vaadin.ui.Button}
+ */
 public class ButtonBuilder extends ComponentBuilder<ButtonBuilder, Button> {
 
     public ButtonBuilder() {

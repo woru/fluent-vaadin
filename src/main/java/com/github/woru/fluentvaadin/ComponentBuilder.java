@@ -2,6 +2,9 @@ package com.github.woru.fluentvaadin;
 
 import com.vaadin.ui.Component;
 
+/**
+ * Base class for all builders.
+ */
 public abstract class ComponentBuilder<S, C extends Component> {
     protected final S myself;
     protected final C component;
@@ -16,6 +19,9 @@ public abstract class ComponentBuilder<S, C extends Component> {
         return myself;
     }
 
+    /**
+     * Equivalent of addStyleName(styleName)
+     */
     public S styleName(String styleName) {
         component.addStyleName(styleName);
         return myself;
@@ -41,6 +47,9 @@ public abstract class ComponentBuilder<S, C extends Component> {
         return myself;
     }
 
+    /**
+     * Equivalent of setEnabled(false)
+     */
     public S disabled() {
         component.setEnabled(false);
         return myself;
@@ -51,6 +60,9 @@ public abstract class ComponentBuilder<S, C extends Component> {
         return myself;
     }
 
+    /**
+     * Equivalent of setVisible(false)
+     */
     public S invisible() {
         component.setVisible(false);
         return myself;
