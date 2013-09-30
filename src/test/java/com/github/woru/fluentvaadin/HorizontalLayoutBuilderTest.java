@@ -33,7 +33,7 @@ public class HorizontalLayoutBuilderTest {
 
         //when
         HorizontalLayout horizontalLayout = horizontalLayout()
-                .addComponentWithExpandRatio(2.0f, button)
+                .addComponent(ExpandRatio.expandRatio(2.0f), button)
                 .build();
 
         //then
@@ -70,7 +70,7 @@ public class HorizontalLayoutBuilderTest {
     public void shouldAddComponentBuilderWithExpandRation() throws Exception {
         //when
         HorizontalLayout horizontalLayout = horizontalLayout()
-                .addComponentWithExpandRatio(2.0f, button())
+                .addComponent(ExpandRatio.expandRatio(2.0f), button())
                 .build();
 
         //then
@@ -81,7 +81,7 @@ public class HorizontalLayoutBuilderTest {
     public void shouldAddComponentBuilderWithAlignment() throws Exception {
         //when
         HorizontalLayout horizontalLayout = horizontalLayout()
-                .addComponent(button(), Alignment.BOTTOM_CENTER)
+                .addComponent(Alignment.BOTTOM_CENTER, button())
                 .build();
 
         //then

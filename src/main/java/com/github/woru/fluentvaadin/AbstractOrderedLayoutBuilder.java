@@ -20,14 +20,23 @@ public class AbstractOrderedLayoutBuilder<S extends AbstractOrderedLayoutBuilder
     }
 
     public S addComponent(Component component, Alignment alignment) {
-        this.component.addComponent(component);
-        this.component.setComponentAlignment(component, alignment);
-        return myself;
+        return addComponent(alignment, null, component);
     }
 
-    public S addComponentWithExpandRatio(float ratio, Component component) {
+    public S addComponent(ExpandRatio ratio, Component component) {
         this.component.addComponent(component);
-        this.component.setExpandRatio(component, ratio);
+        this.component.setExpandRatio(component, ratio.getExpandRatio());
+        return addComponent(null, ratio, component);
+    }
+
+    public S addComponent(Alignment alignment, ExpandRatio ratio, Component component) {
+        this.component.addComponent(component);
+        if (ratio != null) {
+            this.component.setExpandRatio(component, ratio.getExpandRatio());
+        }
+        if (alignment != null) {
+            this.component.setComponentAlignment(component, alignment);
+        }
         return myself;
     }
 
@@ -35,14 +44,19 @@ public class AbstractOrderedLayoutBuilder<S extends AbstractOrderedLayoutBuilder
         return addComponent(componentBuilder.build());
     }
 
-    public S addComponent(ComponentBuilder<?, ?> componentBuilder, Alignment alignment) {
+    public S addComponent(Alignment alignment, ComponentBuilder<?, ?> componentBuilder) {
         Component component = componentBuilder.build();
-        return addComponent(component, alignment);
+        return addComponent(alignment, null, component);
     }
 
-    public S addComponentWithExpandRatio(float ratio, ComponentBuilder<?, ?> componentBuilder) {
+    public S addComponent(ExpandRatio ratio, ComponentBuilder<?, ?> componentBuilder) {
         Component component = componentBuilder.build();
-        return addComponentWithExpandRatio(ratio, component);
+        return addComponent(null, ratio, component);
+    }
+
+    public S addComponent(Alignment alignment, ExpandRatio ratio, ComponentBuilder<?, ?> componentBuilder) {
+        Component component = componentBuilder.build();
+        return addComponent(alignment, ratio, component);
     }
 
     public S spacingEnabled() {
@@ -67,9 +81,9 @@ public class AbstractOrderedLayoutBuilder<S extends AbstractOrderedLayoutBuilder
     /**
      * Specifies margins.
      * <pre>   {@code horizontalLayout()
-        .with(margin().left().right())
-        .build();
-    }</pre>
+     * .with(margin().left().right())
+     * .build();
+     * }</pre>
      */
     public S with(MarginInfoBuilder marginInfoBuilder) {
         return margin(marginInfoBuilder.build());

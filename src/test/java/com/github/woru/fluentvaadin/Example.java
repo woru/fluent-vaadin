@@ -5,6 +5,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
 
 import static com.github.woru.fluentvaadin.ButtonBuilder.button;
+import static com.github.woru.fluentvaadin.ExpandRatio.expandRatio;
 import static com.github.woru.fluentvaadin.HorizontalLayoutBuilder.horizontalLayout;
 import static com.github.woru.fluentvaadin.LinkBuilder.link;
 import static com.github.woru.fluentvaadin.MarginInfoBuilder.margin;
@@ -18,9 +19,9 @@ public class Example {
                 .spacingEnabled()
                 .sizeFull()
                 .styleName("container")
-                .addComponentWithExpandRatio(2.0f, verticalLayout()
+                .addComponent(expandRatio(2.0f), verticalLayout()
                         .marginEnabled()
-                        .addComponent(button("Click me"), Alignment.TOP_LEFT))
+                        .addComponent(Alignment.TOP_LEFT, button("Click me")))
                 .addComponent(link().resource(new ExternalResource("google.com")))
                 .addComponent(textField("Name")
                         .inputPrompt("Your name")
